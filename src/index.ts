@@ -12,7 +12,7 @@ bot.on("message", msg => {
 
 	else if (msg.content.match(/^\-math/i)) {
 		try {
-			msg.channel.send(eval(msg.content.replace(/\×/,"*").replace(/x/i,"*").replace(/\÷/,"/").slice(5)).toString())
+			math(msg)
 		} catch {
 			msg.channel.send("There was an error in your mathematical expression")
 		}
