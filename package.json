@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:dev": "nodemon ./dist/index.js",
-    "build": "tsc --build"
+    "build": "tsc --build",
+    "postinstall": "tsc --build"
   },
   "repository": {
     "type": "git",
