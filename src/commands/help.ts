@@ -1,7 +1,7 @@
 import * as Discord from "discord.js";
 
 export default function(message: Discord.Message){
-	if(message.content.match(/^-help[\w]*$/)){
+	if(message.content.match(/^-help[\s]*$/)){
 		let msg = new Discord.MessageEmbed()
 			.setColor('#ffffff')
 			.setTitle("BotRanger Help")
@@ -15,7 +15,7 @@ export default function(message: Discord.Message){
 			
 		message.channel.send(msg)
 	}
-	else if(message.content.match(/^-help[\w]+math/)){
+	else if(message.content.match(/^-help[\s]+math/)){
 		let msg = new Discord.MessageEmbed()
 			.setColor('#ffffff')
 			.setTitle("BotRanger Help")
@@ -28,7 +28,7 @@ export default function(message: Discord.Message){
 			
 		message.channel.send(msg);
 	}
-	else if(message.content.match(/^-help[\w]+ping/)){
+	else if(message.content.match(/^-help[\s]+ping/)){
 		let msg = new Discord.MessageEmbed()
 			.setColor('#ffffff')
 			.setTitle("BotRanger Help")
