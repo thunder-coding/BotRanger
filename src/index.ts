@@ -12,13 +12,8 @@ bot.on("message", msg => {
 	if (msg.content.match(/^\-ping$/i))
 		ping(msg);
 
-	else if (msg.content.match(/^\-math/i)) {
-		try {
-			math(msg)
-		} catch {
-			msg.channel.send("There was an error in your mathematical expression")
-		}
-	}
+	else if (msg.content.match(/^\-math/i))
+		math(msg)
 	
 	else if(msg.content.match(/^-help/i))
 		help(msg)
