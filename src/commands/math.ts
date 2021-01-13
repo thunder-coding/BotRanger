@@ -1,6 +1,6 @@
 import * as Discord from "discord.js";
 
-export default function(message: Discord.Message){
+export default function(message: Discord.Message): void{
 		if(message.content.length < 6){
 			message.channel.send("Expected 1 or more arguements, recieved 0")
 			return;

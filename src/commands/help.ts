@@ -1,6 +1,6 @@
 import * as Discord from "discord.js";
 
-export default function(message: Discord.Message){
+export default function(message: Discord.Message): void{
 	if(message.content.match(/^-help[\s]*$/)){
 		let msg = new Discord.MessageEmbed()
 			.setColor('#ffffff')
