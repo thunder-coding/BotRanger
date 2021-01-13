@@ -5,6 +5,7 @@ dotenv.config();
 
 import ping from "./commands/ping"
 import math from "./commands/math"
+import help from "./commands/help"
 
 bot.on("message", msg => {
 	if (msg.content.match(/^\-ping$/i))
@@ -17,6 +18,9 @@ bot.on("message", msg => {
 			msg.channel.send("There was an error in your mathematical expression")
 		}
 	}
+	
+	else if(msg.content.match(/^-help/i))
+		help(msg)
 })
 
 bot.login(process.env.BOT_TOKEN)
