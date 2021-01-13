@@ -40,6 +40,18 @@ export default function(message: Discord.Message){
 			
 		message.channel.send(msg);
 	}
+	else if(message.content.match(/^-help[\s]+version/)){
+		let msg = new Discord.MessageEmbed()
+			.setColor('#ffffff')
+			.setTitle("BotRanger Help")
+			.addFields(
+				{ name: '`-version`', value: 'Check what version of bot you are using', inline: true }
+			)
+			.setTimestamp()
+			.setFooter("Help by BotRanger")
+			
+		message.channel.send(msg);
+	}
 	else {
 		let msg = new Discord.MessageEmbed()
 			.setColor('#ffffff')

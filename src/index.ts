@@ -6,6 +6,7 @@ dotenv.config();
 import ping from "./commands/ping"
 import math from "./commands/math"
 import help from "./commands/help"
+import version from "./commands/version"
 
 bot.on("message", msg => {
 	if (msg.content.match(/^\-ping$/i))
@@ -21,6 +22,10 @@ bot.on("message", msg => {
 	
 	else if(msg.content.match(/^-help/i))
 		help(msg)
+		
+		
+	else if(msg.content.match(/^-version$/i))
+		version(msg)
 })
 
 bot.login(process.env.BOT_TOKEN)
