@@ -40,4 +40,16 @@ export default function(message: Discord.Message){
 			
 		message.channel.send(msg);
 	}
+	else {
+		let msg = new Discord.MessageEmbed()
+			.setColor('#ffffff')
+			.setTitle("BotRanger Help")
+			.addFields(
+				{ name: 'Command not found', value: 'Try running `-help` to get a list of all available commands', inline: true }
+			)
+			.setTimestamp()
+			.setFooter("Help by BotRanger")
+			
+		message.channel.send(msg);
+	}
 }
