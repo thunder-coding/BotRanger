@@ -8,7 +8,8 @@ export default function(message: Discord.Message){
 			.addFields(
 				{ name: '`-ping`', value: 'Check if the bot is alive or not', inline: true },
 				{ name: '`-math`', value: 'Solve a mathematical expression', inline: true },
-				{ name: '`-help`', value: 'Display this help message', inline: true }
+				{ name: '`-help`', value: 'Display this help message', inline: true },
+				{ name: '`-version`', value: 'Check what version of bot you are using', inline: true }
 			)
 			.setTimestamp()
 			.setFooter("Help by BotRanger")
