@@ -8,7 +8,8 @@ export default function(message: Discord.Message){
 			.addFields(
 				{ name: '`-ping`', value: 'Check if the bot is alive or not', inline: true },
 				{ name: '`-math`', value: 'Solve a mathematical expression', inline: true },
-				{ name: '`-help`', value: 'Display this help message', inline: true }
+				{ name: '`-help`', value: 'Display this help message', inline: true },
+				{ name: '`-version`', value: 'Check what version of bot you are using', inline: true }
 			)
 			.setTimestamp()
 			.setFooter("Help by BotRanger")
@@ -34,6 +35,18 @@ export default function(message: Discord.Message){
 			.setTitle("BotRanger Help")
 			.addFields(
 				{ name: '`-ping`', value: 'Check if the bot is alive', inline: true }
+			)
+			.setTimestamp()
+			.setFooter("Help by BotRanger")
+			
+		message.channel.send(msg);
+	}
+	else if(message.content.match(/^-help[\s]+version/)){
+		let msg = new Discord.MessageEmbed()
+			.setColor('#ffffff')
+			.setTitle("BotRanger Help")
+			.addFields(
+				{ name: '`-version`', value: 'Check what version of bot you are using', inline: true }
 			)
 			.setTimestamp()
 			.setFooter("Help by BotRanger")
