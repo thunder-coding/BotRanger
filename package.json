@@ -17,6 +17,9 @@
   },
   "author": "Yaksh Bariya",
   "license": "MIT",
+  "engines": {
+    "node": "14.14.0"
+  },
   "bugs": {
     "url": "https://github.com/thunder-coding/BotRanger/issues"
   },
