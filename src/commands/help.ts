@@ -28,4 +28,16 @@ export default function(message: Discord.Message){
 			
 		message.channel.send(msg);
 	}
+	else if(message.content.match(/^-help[\w]+ping/){
+		let msg = new Discord.MessageEmbed()
+			.setColor('#ffffff')
+			.setTitle("BotRanger Help")
+			.addFields(
+				{ name: '`-ping`', value: 'Check if the bot is alive', inline: true }
+			)
+			.setTimestamp()
+			.setFooter("Help by BotRanger")
+			
+		message.channel.send(msg);
+	}
 }
