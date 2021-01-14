@@ -25,7 +25,7 @@ export default function(message: Discord.Message) {
 					return;
 				}
 				response.json().then(function(data) {
-					message.channel.send(`${data.resources.core.remaining}/${data.resources.core.limit}`;
+					message.channel.send(`${data.resources.core.remaining}/${data.resources.core.limit}`);
 				});
 			}
 		)
