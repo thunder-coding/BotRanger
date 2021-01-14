@@ -9,6 +9,7 @@ export default function(message: Discord.Message): void{
 				{ name: '`-ping`', value: 'Check if the bot is alive or not', inline: true },
 				{ name: '`-math`', value: 'Solve a mathematical expression', inline: true },
 				{ name: '`-help`', value: 'Display this help message', inline: true },
+				{ name: '`-github`', value: 'Explore GitHub from Discord with BotRanger', inline: true },
 				{ name: '`-version`', value: 'Check what version of bot you are using', inline: true }
 			)
 			.setTimestamp()
@@ -47,6 +48,20 @@ export default function(message: Discord.Message): void{
 			.setTitle("BotRanger Help")
 			.addFields(
 				{ name: '`-version`', value: 'Check what version of bot you are using', inline: true }
+			)
+			.setTimestamp()
+			.setFooter("Help by BotRanger")
+			
+		message.channel.send(msg);
+	}
+	else if(message.content.match(/^-help[\s]+github/)||message.content.match(/^-help[\s]+gh/)){
+		let msg = new Discord.MessageEmbed()
+			.setColor('#ffffff')
+			.setTitle("BotRanger Help")
+			.addFields(
+				{ name: '`-gh <expression>`', value: 'Explore GitHub from Discord', inline: true },
+				{ name: '`-gh user <username>`', value: 'Get information about a GitHub user', inline: true },
+				{ name: '`-gh rate-limit`', value: 'Check if the bot is being rate limited by GitHub API', inline: true }
 			)
 			.setTimestamp()
 			.setFooter("Help by BotRanger")

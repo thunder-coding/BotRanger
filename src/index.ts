@@ -7,6 +7,7 @@ import ping from "./commands/ping"
 import math from "./commands/math"
 import help from "./commands/help"
 import version from "./commands/version"
+import github from "./commands/github"
 
 bot.on("message", msg => {
 	if (msg.content.match(/^\-ping$/i))
@@ -18,9 +19,11 @@ bot.on("message", msg => {
 	else if(msg.content.match(/^-help/i))
 		help(msg)
 		
-		
 	else if(msg.content.match(/^-version$/i))
 		version(msg)
+		
+	else if(msg.content.match(/^-gh/i) || msg.content.match(/^-github/i))
+		github(msg)
 })
 
 bot.login(process.env.BOT_TOKEN)
