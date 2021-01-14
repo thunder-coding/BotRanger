@@ -55,8 +55,8 @@ export default function(message: Discord.Message): void{
 		message.channel.send(msg);
 	}
 	else if(message.content.match(/^-help[\s]+github/)||message.content.match(/^-help[\s]+gh/)){
-		let msg = new Discord.MessageEmbed()let msg = new Discord.MessageEmbed()
-			.setColor.setColor('#ffffff')
+		let msg = new Discord.MessageEmbed()
+			.setColor('#ffffff')
 			.setTitle("BotRanger Help")
 			.addFields(
 				{ name: '`-gh <expression>`', value: 'Explore GitHub from Discord', inline: true },
