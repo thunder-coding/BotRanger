@@ -62,4 +62,7 @@ export default function(message: Discord.Message) {
 			message.channel.send('Fetch Error :-S', err);
 		});
 	}
+	else{
+		message.channel.send("No overload matched this query. Try running `-help gh` to get help about the github command")
+	}
 }
