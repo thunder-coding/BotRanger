@@ -62,6 +62,35 @@ export default function(message: Discord.Message) {
 			message.channel.send('Fetch Error :-S', err);
 		});
 	}
+	else if(argument.match(/^repo/i)){
+		if(!argument.match(/^repo[\s]+[A-Za-z1-9\-]+[\/][A-Za-z1-9\-]+$/))
+			message.channel.send("Repository should be in the form `<username/repo>`")
+		fetch(url+'/repos/'+argument.match(/[A-Za-z1-9\-]+[\/][A-Za-z1-9\-]+$/)) 
+		.then(response=>{
+				if (response.status !== 200) {
+					message.channel.send('GitHub repo not found. For more help with the GitHub command run `-help github`');
+					return;
+				}
+				response.json().then(function(data) {
+					let msg = new Discord.MessageEmbed()
+						.setColor('#304f55')
+						.setTitle(data.name)
+						.setURL(data.html_url)
+						.addFields(
+							{ name: 'License', value: data?.license?.spdx_id??"No License", inline: true },
+							{ name: 'Stars', value: data.stargazers_count, inline: true },
+							{ name: 'Forks', value: data.forks, inline: true },
+						)
+						.setThumbnail(data.owner.avatar_url)
+						.setTimestamp()
+					message.channel.send(msg);
+				});
+			}
+		)
+		.catch(function(err) {
+			message.channel.send('Fetch Error :-S', err);
+		});
+	}
 	else{
 		message.channel.send("No overload matched this query. Try running `-help gh` to get help about the github command")
 	}
