@@ -61,7 +61,7 @@ export default function(message: Discord.Message): void{
 			.addFields(
 				{ name: '`-gh <expression>`', value: 'Explore GitHub from Discord', inline: true },
 				{ name: '`-gh user <username>`', value: 'Get information about a GitHub user', inline: true },
-				{ name: '`-gh repo <username>`', value: 'Get information about a GitHub repository', inline: true },
+				{ name: '`-gh repo <username>/<repository>`', value: 'Get information about a GitHub repository', inline: true },
 				{ name: '`-gh rate-limit`', value: 'Check if the bot is being rate limited by GitHub API', inline: true }
 			)
 			.setTimestamp()
