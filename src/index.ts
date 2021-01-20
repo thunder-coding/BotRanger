@@ -6,6 +6,7 @@ dotenv.config();
 import ping from "./commands/ping"
 import math from "./commands/math"
 import help from "./commands/help"
+import clear from "./commands/clear"
 import version from "./commands/version"
 import github from "./commands/github"
 
@@ -23,7 +24,10 @@ bot.on("message", msg => {
 		version(msg)
 		
 	else if(msg.content.match(/^-gh/i) || msg.content.match(/^-github/i))
-		github(msg)
+		github(msg)	
+	
+	else if(msg.content.match(/^-clear/i))
+		clear(msg)
 })
 
 bot.login(process.env.BOT_TOKEN)
