@@ -14,6 +14,7 @@ export default function(message: Discord.Message): void {
 		message.channel.send("No overload matched your call. Try running `-help clear` to learn more about this command")
 		return;
 	}
+	if(message.member?.hasPermission("MANAGE_MESSAGES")){
 	message.channel.messages.fetch({limit: count})
 		.then(messages => {
 			messages.forEach(message => {
@@ -21,4 +22,7 @@ export default function(message: Discord.Message): void {
 			})
 		})
 		.catch(console.error)
+	}
+	else
+		message.channel.send("You don't have permissions to manage messages in this channel")
 }
