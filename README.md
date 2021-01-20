@@ -1,3 +1,7 @@
+[![Discord](https://img.shields.io/discord/739775771924627567?style=for-the-badge)](https://discord.gg/YMhxGjzsJ8)
+
+Join chat on Discord to try and test the bot.
+
 # BotRanger
 
 A Discord bot for your awesome server
@@ -5,3 +9,4 @@ A Discord bot for your awesome server
 ### What can it do
 
 ✔️ Solve mathematical expression
+
