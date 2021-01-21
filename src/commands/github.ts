@@ -34,8 +34,10 @@ export default function(message: Discord.Message) {
 		});
 	}
 	else if(argument.match(/^user/i)){
-		if(!argument.match(/^user[\s]+[A-Za-z1-9\-]+$/))
-			message.channel.send("No username provided or more than 1 username provided. BotRanger can only send GitHub user data once at a time")
+		if(!argument.match(/^user[\s]+[A-Za-z-9\-]+$/)){
+			message.channel.send("No username provided or more than 1 username provided. BotRanger can only send GitHub user data once at a time");
+			return;
+		}
 		fetch(url+'/users/'+argument.match(/[A-Za-z1-9\-]+$/)) 
 		.then(response=>{
 				if (response.status !== 200) {
