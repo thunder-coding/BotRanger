@@ -34,7 +34,7 @@ export default function(message: Discord.Message) {
 		});
 	}
 	else if(argument.match(/^user/i)){
-		if(!argument.match(/^user[\s]+[A-Za-z-9\-]+$/)){
+		if(!argument.match(/^user[\s]+[A-Za-z0-9\-]+$/)){
 			message.channel.send("No username provided or more than 1 username provided. BotRanger can only send GitHub user data once at a time");
 			return;
 		}
