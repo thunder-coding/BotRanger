@@ -12,6 +12,7 @@ export default function(message: Discord.Message): void{
 				{ name: '`-github`', value: 'Explore GitHub from Discord with BotRanger', inline: true },
 				{ name: '`-version`', value: 'Check what version of bot you are using', inline: true },
 				{ name: '`-clear`', value: 'Delete messages in current channel', inline: true },
+				{ name: '`-uptime`', value: 'Check when the Bot was last offline', inline: true }
 			)
 			.setTimestamp()
 			.setFooter("Help by BotRanger")
@@ -77,6 +78,18 @@ export default function(message: Discord.Message): void{
 			.addFields(
 				{ name: '`-clear`', value: 'Delete 50 messages in current channel', inline: true },
 				{ name: '`-clear <number>`', value: 'Deletes <number> messages in current channel', inline: true }
+			)
+			.setTimestamp()
+			.setFooter("Help by BotRanger")
+			
+		message.channel.send(msg);
+	}
+	else if(message.content.match(/^-help[\s]+uptime/)){
+		let msg = new Discord.MessageEmbed()
+			.setColor('#ffffff')
+			.setTitle("BotRanger Help")
+			.addFields(
+				{ name: '`-uptime`', value: 'Check when the bot was last offline', inline: true }
 			)
 			.setTimestamp()
 			.setFooter("Help by BotRanger")
