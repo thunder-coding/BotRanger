@@ -1,0 +1,56 @@
+<svg width="480" height="480" xmlns="http://www.w3.org/2000/svg">
+	<style>
+		.eye {
+			fill: #fefefe;
+			stroke: #010f38;
+			stroke-width: 2;
+		}
+		
+		.eye-ball {
+			fill: #050219;
+		}
+		
+		.mouth {
+			fill: #f3a7b2;
+			stroke: #010f38;
+			stroke-width: 2;
+		}
+		
+		.tounge {
+			fill: #a83333;
+		}
+	</style>
+	<defs>
+		<radialGradient id="eye-dot" cx="50%" cy="50%" r="50%" fx="70%" fy="70%" >
+			<stop offset="0%" style="stop-color:#b8b8b8;" />
+			<stop offset="100%" style="stop-color:#ffffff" />
+		</radialGradient>
+	</defs>
+	<rect x="0" y="0" width="480" height="480" fill="#ffffff" />
+	<!-- Guide circle -->
+	<!--<circle cx="240" cy="240" r="240" stroke="white" stroke-width="10" />-->
+	
+	<!-- Antenna -->
+	<polygon points="235,120 245,120 243,50 237,50" fill="green" />
+	<circle cx="240" cy="50" r="10" fill="#ffaa00" />
+	<!-- Bot's face -->
+	<ellipse cx="240" cy="210" ry="90" rx="160" stroke="green" stroke-width="4" fill="yellow" />
+		<!-- Left Eye -->
+		<polygon points="130,180 200,180 165,150" class="eye" />
+		<path d="M180,180 a17,17 0 1,0 -34,0" class="eye-ball" />
+		<polygon points="130,180 200,180 165,150" class="eye" style="fill:none;" />
+		<circle cx="158" cy="172" r="4.4" fill="url(#eye-dot)" />
+		<!-- Right Eye -->
+		<polygon points="280,180 350,180 315,150" class="eye" />
+		<path d="M330,180 a17,17 0 1,0 -34,0" class="eye-ball" />
+		<polygon points="280,180 350,180 315,150" class="eye" style="fill:none;" />
+		<circle cx="308" cy="172" r="4.4" fill="url(#eye-dot)" />
+		
+		<!-- Mouth -->
+		<polygon points="180,240 300,240 240,280" class="mouth" />
+		<path d="M202.5,255 a 27.5,20 0 0 1 45 30 Z" class="tounge" />
+		<polygon points="240,280 300,240 240,295" fill="yellow" />
+		<path d="M277.5,255 a 27.5,20 0 0 0 -45 30 Z" class="tounge" />
+		<polygon points="240,280 180,240 240,295" fill="yellow" />
+		<polygon points="180,240 300,240 240,280" class="mouth" style="fill:none;" />
+</svg>

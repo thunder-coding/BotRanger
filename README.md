@@ -4,6 +4,8 @@ Join chat on Discord to try and test the bot.
 
 # BotRanger
 
+![BotRanger Logo](./misc/logo.svg)
+
 A Discord bot for your awesome server
 
 ### What can it do
