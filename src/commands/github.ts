@@ -64,6 +64,36 @@ export default function(message: Discord.Message) {
 			message.channel.send('Fetch Error :-S', err);
 		});
 	}
+	else if(argument.match(/^org/i)){
+		if(!argument.match(/^org[\s]+[A-Za-z0-9\-]+$/)){
+			message.channel.send("No username provided or more than 1 username provided. BotRanger can only send GitHub user data once at a time");
+			return;
+		}
+		fetch(url+'/orgs/'+argument.match(/[A-Za-z1-9\-]+$/)) 
+		.then(response=>{
+				if (response.status !== 200) {
+					message.channel.send('GitHub organization not found. If you looks to search for a organization try running `-gh org <organization username`');
+					return;
+				}
+				response.json().then(function(data) {
+					let msg = new Discord.MessageEmbed()
+						.setColor('#304f55')
+						.setTitle(data.name)
+						.setURL(data.html_url)
+						.addFields(
+							{ name: 'Username', value: data.login, inline: true },
+							{ name: 'Verified', value: data.is_verified ? 'Yes' : 'No', inline: true },
+						)
+						.setThumbnail(data.avatar_url)
+						.setTimestamp()
+					message.channel.send(msg);
+				});
+			}
+		)
+		.catch(function(err) {
+			message.channel.send('Fetch Error :-S', err);
+		});
+	}
 	else if(argument.match(/^repo/i)){
 		if(!argument.match(/^repo[\s]+[A-Za-z1-9\-]+[\/][A-Za-z1-9\-]+$/))
 			message.channel.send("Repository should be in the form `<username/repo>`")
