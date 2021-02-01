@@ -53,6 +53,7 @@ export default function(message: Discord.Message) {
 							{ name: 'Username', value: data.login, inline: true },
 							{ name: 'Followers', value: data.followers, inline: true },
 							{ name: 'Following', value: data.following, inline: true },
+							{ name: 'Account Type', value: data.type, inline: true }
 						)
 						.setThumbnail(data.avatar_url)
 						.setTimestamp()
