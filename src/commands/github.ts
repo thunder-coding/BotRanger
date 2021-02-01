@@ -41,7 +41,7 @@ export default function(message: Discord.Message) {
 		fetch(url+'/users/'+argument.match(/[A-Za-z1-9\-]+$/)) 
 		.then(response=>{
 				if (response.status !== 200) {
-					message.channel.send('GitHub user not found. If you looks to search for a organization try running `-gh org <organization username`');
+					message.channel.send('GitHub user not found.');
 					return;
 				}
 				response.json().then(function(data) {
@@ -67,13 +67,13 @@ export default function(message: Discord.Message) {
 	}
 	else if(argument.match(/^org/i)){
 		if(!argument.match(/^org[\s]+[A-Za-z0-9\-]+$/)){
-			message.channel.send("No username provided or more than 1 username provided. BotRanger can only send GitHub user data once at a time");
+			message.channel.send("No username provided or more than 1 username provided. BotRanger can handle only 1 GitHub user at a time");
 			return;
 		}
 		fetch(url+'/orgs/'+argument.match(/[A-Za-z1-9\-]+$/)) 
 		.then(response=>{
 				if (response.status !== 200) {
-					message.channel.send('GitHub organization not found. If you looks to search for a organization try running `-gh org <organization username`');
+					message.channel.send('GitHub organization not found. If you are searching for a user try running `-gh user <username>`');
 					return;
 				}
 				response.json().then(function(data) {
