@@ -1,7 +1,7 @@
 import * as Discord from "discord.js";
 
 export default function(message: Discord.Message): void{
-	if(message.content.match(/^-help[\s]*$/)){
+	if(message.content.match(/^-help[\s]*$/i)){
 		let msg = new Discord.MessageEmbed()
 			.setColor('#ffffff')
 			.setTitle("BotRanger Help")
@@ -19,7 +19,7 @@ export default function(message: Discord.Message): void{
 			
 		message.channel.send(msg)
 	}
-	else if(message.content.match(/^-help[\s]+math/)){
+	else if(message.content.match(/^-help[\s]+math/i)){
 		let msg = new Discord.MessageEmbed()
 			.setColor('#ffffff')
 			.setTitle("BotRanger Help")
@@ -32,7 +32,7 @@ export default function(message: Discord.Message): void{
 			
 		message.channel.send(msg);
 	}
-	else if(message.content.match(/^-help[\s]+ping/)){
+	else if(message.content.match(/^-help[\s]+ping/i)){
 		let msg = new Discord.MessageEmbed()
 			.setColor('#ffffff')
 			.setTitle("BotRanger Help")
@@ -44,7 +44,7 @@ export default function(message: Discord.Message): void{
 			
 		message.channel.send(msg);
 	}
-	else if(message.content.match(/^-help[\s]+version/)){
+	else if(message.content.match(/^-help[\s]+version/i)){
 		let msg = new Discord.MessageEmbed()
 			.setColor('#ffffff')
 			.setTitle("BotRanger Help")
@@ -56,7 +56,7 @@ export default function(message: Discord.Message): void{
 			
 		message.channel.send(msg);
 	}
-	else if(message.content.match(/^-help[\s]+github/)||message.content.match(/^-help[\s]+gh/)){
+	else if(message.content.match(/^-help[\s]+github/i)||message.content.match(/^-help[\s]+gh/i)){
 		let msg = new Discord.MessageEmbed()
 			.setColor('#ffffff')
 			.setTitle("BotRanger Help")
@@ -71,7 +71,7 @@ export default function(message: Discord.Message): void{
 			
 		message.channel.send(msg);
 	}
-	else if(message.content.match(/^-help[\s]+clear/)){
+	else if(message.content.match(/^-help[\s]+clear/i)){
 		let msg = new Discord.MessageEmbed()
 			.setColor('#ffffff')
 			.setTitle("BotRanger Help")
@@ -84,7 +84,7 @@ export default function(message: Discord.Message): void{
 			
 		message.channel.send(msg);
 	}
-	else if(message.content.match(/^-help[\s]+uptime/)){
+	else if(message.content.match(/^-help[\s]+uptime/i)){
 		let msg = new Discord.MessageEmbed()
 			.setColor('#ffffff')
 			.setTitle("BotRanger Help")
