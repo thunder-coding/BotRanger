@@ -10,6 +10,7 @@ import clear from "./commands/clear"
 import version from "./commands/version"
 import github from "./commands/github"
 import uptime from "./commands/uptime"
+import invite from "./commands/invite"
 
 bot.on("message", msg => {
 	if (msg.content.match(/^\-ping$/i))
@@ -32,6 +33,9 @@ bot.on("message", msg => {
 		
 	else if (msg.content.match(/^\-uptime$/i))
 		uptime(msg, bot.uptime as number);
+	
+	else if (msg.content.match(/^\-invite$/i))
+		invite(msg);
 })
 
 bot.login(process.env.BOT_TOKEN)

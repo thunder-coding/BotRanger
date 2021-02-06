@@ -12,7 +12,8 @@ export default function(message: Discord.Message): void{
 				{ name: '`-github`', value: 'Explore GitHub from Discord with BotRanger', inline: true },
 				{ name: '`-version`', value: 'Check what version of bot you are using', inline: true },
 				{ name: '`-clear`', value: 'Delete messages in current channel', inline: true },
-				{ name: '`-uptime`', value: 'Check when the Bot was last offline', inline: true }
+				{ name: '`-uptime`', value: 'Check when the Bot was last offline', inline: true },
+				{ name: '`-invite`', value: 'Invite BotRanger to your Discord Server', inline: true }
 			)
 			.setTimestamp()
 			.setFooter("Help by BotRanger")
@@ -90,6 +91,18 @@ export default function(message: Discord.Message): void{
 			.setTitle("BotRanger Help")
 			.addFields(
 				{ name: '`-uptime`', value: 'Check when the bot was last offline', inline: true }
+			)
+			.setTimestamp()
+			.setFooter("Help by BotRanger")
+			
+		message.channel.send(msg);
+	}
+	else if(message.content.match(/^-help[\s]+invite/i)){
+		let msg = new Discord.MessageEmbed()
+			.setColor('#ffffff')
+			.setTitle("BotRanger Help")
+			.addFields(
+				{ name: '`-invite`', value: 'Invite BotRanger to your Discord Server', inline: true }
 			)
 			.setTimestamp()
 			.setFooter("Help by BotRanger")
