@@ -1,6 +1,6 @@
 import * as Discord from "discord.js";
 let count: number = 0;
-export default function(message: Discord.Message): void {
+export default async function(message: Discord.Message) {
 	if (message.content.match(/^\-clear$/i))
 		count = 50;
 	else if (message.content.match(/^\-clear[\s]+[0-9]+$/i)) {
@@ -17,10 +17,15 @@ export default function(message: Discord.Message): void {
 		message.channel.messages.fetch({
 			limit: count
 		})
-		.then(messages => {
+		.then(async function (messages) {
+			let messagesCount = messages.size;
+			let messageCounter = await message.channel.send(`Deleting ${messagesCount} messages`);
 			messages.forEach(message => {
+				messagesCount--;
 				message.delete();
+				messageCounter.edit(`Deleting... ${messagesCount}/${messages.size}`)
 			})
+			messageCounter.edit(`Successfully deleted ${messages.size} messages`)
 		})
 		.catch(console.error)
 	} else
