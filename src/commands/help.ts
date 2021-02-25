@@ -36,6 +36,11 @@ export default function (message: Discord.Message): void {
 					name: '`-uptime`',
 					value: 'Check when the Bot was last offline',
 					inline: true,
+				},
+				{
+					name: '`-mdn`',
+					value: 'Search MDN docs using BotRanger',
+					inline: true,
 				}
 			)
 			.setTimestamp()
@@ -160,7 +165,7 @@ export default function (message: Discord.Message): void {
 			.setColor('#ffffff')
 			.setTitle('BotRanger Help')
 			.addFields({
-				name: '`-version`',
+				name: '`-mdn`',
 				value: 'Search MDN docs using BotRanger',
 				inline: true,
 			})
