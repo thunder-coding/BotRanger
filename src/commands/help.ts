@@ -155,6 +155,19 @@ export default function (message: Discord.Message): void {
 			.setFooter('Help by BotRanger')
 
 		message.channel.send(msg)
+	} else if (message.content.match(/^-help[\s]+mdn/i)) {
+		let msg = new Discord.MessageEmbed()
+			.setColor('#ffffff')
+			.setTitle('BotRanger Help')
+			.addFields({
+				name: '`-version`',
+				value: 'Search MDN docs using BotRanger',
+				inline: true,
+			})
+			.setTimestamp()
+			.setFooter('Help by BotRanger')
+
+		message.channel.send(msg)
 	} else {
 		let msg = new Discord.MessageEmbed()
 			.setColor('#ffffff')
