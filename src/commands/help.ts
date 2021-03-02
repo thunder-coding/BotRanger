@@ -41,6 +41,11 @@ export default function (message: Discord.Message): void {
 					name: '`-mdn`',
 					value: 'Search MDN docs using BotRanger',
 					inline: true,
+				},
+				{
+					name: '`-bulkClear`',
+					value: 'Bulk clear messages of upto 14 days',
+					inline: true,
 				}
 			)
 			.setTimestamp()
@@ -167,6 +172,19 @@ export default function (message: Discord.Message): void {
 			.addFields({
 				name: '`-mdn`',
 				value: 'Search MDN docs using BotRanger',
+				inline: true,
+			})
+			.setTimestamp()
+			.setFooter('Help by BotRanger')
+
+		message.channel.send(msg)
+	} else if (message.content.match(/^-help[\s]+bulkClear/i)) {
+		let msg = new Discord.MessageEmbed()
+			.setColor('#ffffff')
+			.setTitle('BotRanger Help')
+			.addFields({
+				name: '`-bulkClear`',
+				value: 'Bulk clear messages of upto 14 days',
 				inline: true,
 			})
 			.setTimestamp()
