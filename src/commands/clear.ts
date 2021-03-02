@@ -4,9 +4,9 @@ export default async function (message: Discord.Message) {
 	if (message.content.match(/^\-clear$/i)) count = 50
 	else if (message.content.match(/^\-clear[\s]+[0-9]+$/i)) {
 		count = +message.content.match(/[0-9]+$/)![0]
-		if (count > 500) {
+		if (count > 100) {
 			message.channel.send(
-				'BotRanger will only delete 500 messages at a time to reduce the chances of BotRanger being rate limited by Discord'
+				'BotRanger will only delete 100 messages at a time to reduce the chances of BotRanger being rate limited by Discord'
 			)
 			return
 		}
