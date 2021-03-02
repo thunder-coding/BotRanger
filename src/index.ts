@@ -11,6 +11,7 @@ import version from './commands/version'
 import github from './commands/github'
 import uptime from './commands/uptime'
 import mdn from './commands/mdn'
+import bulkClear from './commands/bulkClear'
 
 bot.on('message', (msg) => {
 	if (msg.content.match(/^\-ping$/i)) ping(msg)
@@ -22,6 +23,7 @@ bot.on('message', (msg) => {
 	else if (msg.content.match(/^-clear/i)) clear(msg)
 	else if (msg.content.match(/^\-uptime$/i)) uptime(msg, bot.uptime as number)
 	else if (msg.content.match(/^\-mdn/i)) mdn(msg)
+	else if (msg.content.match(/^\-bulkClear/i)) bulkClear(msg)
 })
 
 bot.login(process.env.BOT_TOKEN)
