@@ -1,4 +1,4 @@
-import * as Discord from 'discord.js'
+import type * as Discord from 'discord.js'
 
 export default function (message: Discord.Message, uptime: number): void {
 	let uptimeSeconds = Math.floor((uptime / 1000) % 60)
