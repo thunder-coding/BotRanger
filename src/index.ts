@@ -1,7 +1,10 @@
 import * as Discord from 'discord.js'
-const bot = new Discord.Client()
 import dotenv from 'dotenv'
 dotenv.config()
+
+const bot = new Discord.Client({
+	partials: ['MESSAGE', 'CHANNEL', 'REACTION'],
+})
 
 import ping from './commands/ping'
 import math from './commands/math'
@@ -12,6 +15,8 @@ import github from './commands/github'
 import uptime from './commands/uptime'
 import mdn from './commands/mdn'
 import bulkClear from './commands/bulkClear'
+
+import autoRole from './util/autoRole'
 
 bot.on('message', (msg) => {
 	if (msg.content.match(/^\-ping$/i)) ping(msg)
@@ -25,5 +30,12 @@ bot.on('message', (msg) => {
 	else if (msg.content.match(/^\-mdn/i)) mdn(msg)
 	else if (msg.content.match(/^\-bulkClear/i)) bulkClear(msg)
 })
+
+bot.on('messageReactionAdd', (reaction, user) =>
+	autoRole('ADD', reaction, user, bot)
+)
+bot.on('messageReactionRemove', (reaction, user) =>
+	autoRole('REMOVE', reaction, user, bot)
+)
 
 bot.login(process.env.BOT_TOKEN)
