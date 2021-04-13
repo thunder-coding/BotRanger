@@ -1,4 +1,4 @@
-import * as Discord from 'discord.js'
+import type * as Discord from 'discord.js'
 
 export default async function (message: Discord.Message) {
 	if (message.member?.hasPermission('MANAGE_MESSAGES')) {

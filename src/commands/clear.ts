@@ -1,4 +1,4 @@
-import * as Discord from 'discord.js'
+import type * as Discord from 'discord.js'
 let count: number = 0
 export default async function (message: Discord.Message) {
 	if (message.content.match(/^\-clear$/i)) count = 50
