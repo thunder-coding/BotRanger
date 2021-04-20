@@ -14,6 +14,10 @@ A Discord bot for your awesome server
 
 ✔️ Delete messages in current channel.
 
+✔️ React Roles
+
+✔️ Search MDN Content
+
 `-help` to see complete help message in Discord.
 
 

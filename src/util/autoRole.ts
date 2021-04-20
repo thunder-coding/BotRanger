@@ -40,9 +40,9 @@ export default async function autoRole(
 				)
 				let member = await server.members.fetch(user.id)
 				if (action === 'ADD') {
-					member.roles.add([role.id], 'React Role')
+					member.roles.add(role.id, 'React Role')
 				} else if (action === 'REMOVE') {
-					member.roles.remove([role.id], 'React Role')
+					member.roles.remove(role.id, 'React Role')
 				}
 			}
 		})

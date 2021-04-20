@@ -56,6 +56,7 @@ bot.on('message', async (msg) => {
 						.addField('Rank', rank + 1)
 						.addField('XP', member.count)
 						.setTitle(msg.author.username)
+						.setTimestamp()
 				)
 			} catch {
 				msg.channel.send(
@@ -76,6 +77,7 @@ bot.on('message', async (msg) => {
 			})
 			message.setTitle('Server leaderboard')
 			message.setThumbnail((msg.guild!.iconURL() as unknown) as string)
+			message.setTimestamp()
 			msg.channel.send(message)
 		} else if (!msg.author.bot) {
 			await Mongo.db()
