@@ -1,6 +1,6 @@
 {
   "name": "botranger",
-  "version": "0.6.1",
+  "version": "0.7.0",
   "description": "A discord bot to help you in every way",
   "main": "./dist/index.js",
   "scripts": {
