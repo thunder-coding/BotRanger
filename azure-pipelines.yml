@@ -12,16 +12,13 @@ pool:
 steps:
 - task: NodeTool@0
   inputs:
-    versionSpec: '14.14.0'
+    versionSpec: '14.15.4'
   displayName: 'Install Node.js'
 
-- script: npm --version
-  displayName: Check npm version
-
 - script: |
-    npm install
-    npm run build
-  displayName: 'npm install and build'
+    yarn
+    yarn build
+  displayName: 'Install dependencies and build'
 
-- script: npm run prettier-check
+- script: yarn prettier-check
   displayName: Prettier run checks
