@@ -1,0 +1,9 @@
+/.git/
+/.github/
+/dist/
+/node_modules
+.env
+.env.example
+CODE_OF_CONDUCT.md
+CONTRIBUTING.md
+
