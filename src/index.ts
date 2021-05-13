@@ -76,7 +76,7 @@ bot.on('message', async (msg) => {
 				message.addField(`#${index + 1}`, `<@${member._id}>: ${member.count}`)
 			})
 			message.setTitle('Server leaderboard')
-			message.setThumbnail((msg.guild!.iconURL() as unknown) as string)
+			message.setThumbnail(msg.guild!.iconURL() as unknown as string)
 			message.setTimestamp()
 			msg.channel.send(message)
 		} else if (!msg.author.bot) {
