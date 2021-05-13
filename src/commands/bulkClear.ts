@@ -6,9 +6,9 @@ export default async function (message: Discord.Message) {
 			.fetch()
 			.then((messages) => {
 				if (message.guild)
-					(message.channel as
-						| Discord.TextChannel
-						| Discord.NewsChannel).bulkDelete(messages)
+					(
+						message.channel as Discord.TextChannel | Discord.NewsChannel
+					).bulkDelete(messages)
 				else message.channel.send('This command can only be used in a server')
 			})
 			.catch(console.error)
