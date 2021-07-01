@@ -1,5 +1,5 @@
 import type * as Discord from 'discord.js'
-import mathematicalEval from '../util/mathematicalEval'
+import { evaluate } from 'mathjs'
 
 export default function (message: Discord.Message): void {
 	if (message.content.length < 6) {
@@ -8,7 +8,7 @@ export default function (message: Discord.Message): void {
 	}
 	try {
 		message.channel.send(
-			mathematicalEval(
+			evaluate(
 				message.content
 					.replace(/\×/g, '*')
 					.replace(/x/gi, '*')
