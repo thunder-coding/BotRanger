@@ -1,4 +1,5 @@
 [![Discord](https://img.shields.io/discord/739775771924627567?style=for-the-badge)](https://discord.gg/YMhxGjzsJ8)
+![Libraries.io dependency status for GitHub repo](https://img.shields.io/librariesio/github/thunder-coding/BotRanger?style=for-the-badge)
 
 Join chat on Discord to try and test the bot.
 
