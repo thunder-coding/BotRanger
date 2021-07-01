@@ -1,8 +1,9 @@
 This PR
 
-<!-- 
+<!--
     Mark all that apply
 -->
+
 - [ ] adds/removes a new command
 - [ ] Fixes bug(s) in any of the already defined command
 - [ ] includes adding/removing dependencies
@@ -29,4 +30,3 @@ Dependencies updated:
 - `...`
 
 -->
-
