@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/thunder-coding/BotRanger#readme",
   "devDependencies": {
-    "@types/mongodb": "^3.6.19",
+    "@types/mongodb": "^3.6.20",
     "@types/node": "^16.0.0",
     "@types/node-fetch": "^2.5.10",
     "nodemon": "^2.0.9",
