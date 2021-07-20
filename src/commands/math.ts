@@ -13,6 +13,8 @@ export default function (message: Discord.Message): void {
 					.replace(/\×/g, '*')
 					.replace(/x/gi, '*')
 					.replace(/\÷/g, '/')
+					.replace(/\°/g, 'deg')
+					.replace(/\π/g, 'PI')
 					.slice(6)
 			).toString()
 		)
