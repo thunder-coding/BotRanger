@@ -1,14 +1,13 @@
 import * as Discord from 'discord.js'
-import { MongoClient } from 'mongodb'
+import { MongoClient, MongoClientOptions } from 'mongodb'
 import dotenv from 'dotenv'
 dotenv.config()
 
 const Mongo = new MongoClient(
   `mongodb+srv://${process.env.MONGODB_USER}:${process.env.MONGODB_PASS}@${process.env.MONGODB_URL}/test?retryWrites=true&w=majority`,
   {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  }
+    useUnifiedTopology: true
+  } as MongoClientOptions
 )
 
 Mongo.connect()
@@ -49,12 +48,12 @@ bot.on('message', async (msg) => {
         let member = await Mongo.db().collection('main').findOne({ _id: query })
         let rank = await Mongo.db()
           .collection('main')
-          .countDocuments({ count: { $gt: member.count } })
+          .countDocuments({ count: { $gt: member!.count } })
         msg.channel.send(
           new Discord.MessageEmbed()
             .setThumbnail(msg.author.displayAvatarURL())
             .addField('Rank', rank + 1)
-            .addField('XP', member.count)
+            .addField('XP', member!.count)
             .setTitle(msg.author.username)
             .setTimestamp()
         )
