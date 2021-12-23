@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@babel/runtime@^7.15.4":
-  version "7.15.4"
-  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.15.4.tgz#fd17d16bfdf878e6dd02d19753a39fa8a8d9c84a"
-  integrity sha512-99catp6bHCaxr4sJ/DbTGgHS4+Rs2RVd2g7iOap6SLGPDknRK9ztKNsE/Fg6QhSeh1FGE5f6gHGQmvvn3I3xhw==
+"@babel/runtime@^7.16.0":
+  version "7.16.5"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.16.5.tgz#7f3e34bf8bdbbadf03fbb7b1ea0d929569c9487a"
+  integrity sha512-TXWihFIS3Pyv5hzR7j6ihmeLkZfrXGxAr5UfSl8CHf+6q/wpiYDkUau0czckpYG8QmnCIuPpdLtuA9VmuGGyMA==
   dependencies:
     regenerator-runtime "^0.13.4"
 
@@ -630,12 +630,12 @@ make-dir@^3.0.0:
   dependencies:
     semver "^6.0.0"
 
-mathjs@~9.4.5:
-  version "9.4.5"
-  resolved "https://registry.yarnpkg.com/mathjs/-/mathjs-9.4.5.tgz#c98760458e135a73f44eb2ff36f247295cb3b82b"
-  integrity sha512-FbcPOwfo1RHzZq0CFsaxQr3Scp94BGQMd6S8zIEgj8PbxwqMREVOEKw2JdQg/BBjB1nGXOmH0hnuwUVXkla2rg==
+mathjs@~10.0.1:
+  version "10.0.1"
+  resolved "https://registry.yarnpkg.com/mathjs/-/mathjs-10.0.1.tgz#73356328bb3cccbb11816037c58628124f38fe67"
+  integrity sha512-PSkO4qpPCEXB7IQl3hj0N+2mZg+8ibX1uJi+u/T7Xb4ygGXMA0hpPrVoqBGBTk5i2S+f6cQEPsWLVPJFLLh2TQ==
   dependencies:
-    "@babel/runtime" "^7.15.4"
+    "@babel/runtime" "^7.16.0"
     complex.js "^2.0.15"
     decimal.js "^10.3.1"
     escape-latex "^1.2.0"
